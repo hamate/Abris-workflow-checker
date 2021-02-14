@@ -6,7 +6,8 @@
   },
   "extends": [
     "plugin:react/recommended",
-    "airbnb"
+    "airbnb",
+    "eslint:recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -15,30 +16,21 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "overrides": [
     {
-      "files": [
-        "**/*.test.js"
-      ],
+      "files": ["**/*.test.js"],
       "env": {
         "jest": true
       },
-      "plugins": [
-        "jest"
-      ]
+      "plugins": ["jest"]
     }
   ],
   "rules": {
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "react/no-array-index-key": "off",
@@ -46,6 +38,8 @@
     "jsx-a11y/no-nointeractive-element-interactions": "off",
     "react/prop-types": "warn", //todo: remove next week
     "no-plusplus": "off",
+    "no-use-before-define": "warn",
+    "no-unused-vars": "warn",
     "jsx-a11y/label-has-associated-control": [
       "warn",
       {
