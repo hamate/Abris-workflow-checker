@@ -36,9 +36,9 @@
     "react/no-array-index-key": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-nointeractive-element-interactions": "off",
-    "react/prop-types": "warn", //todo: remove next week
+    "react/prop-types": "off", //todo: remove next week
     "no-plusplus": "off",
-    "no-use-before-define": "warn",
+    "no-use-before-define": "off",
     "no-unused-vars": "warn",
     "jsx-a11y/label-has-associated-control": [
       "warn",

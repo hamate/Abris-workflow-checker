@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 function Task(props) {
-  const { task } = props;
-  const [isDone, setIsDone] = useState(task.status);
+  const { task, status } = props;
 
-  useEffect(() => {
-    setIsDone(isDone === 'done' ? 'done' : task.status);
-  }, []);
+  function handleStatusChange() {
+    if (status === 'none') {
+      return <div className="dot-none" />;
+    }
+    if (status === 'running') {
+      return <div className="loader" />;
+    }
+    return <div className="dot-done" />;
+  }
 
   return (
     <div className="tasks">
       <span className="task-status">
-        {task.status}
+        {handleStatusChange()}
       </span>
       {task.title}
     </div>

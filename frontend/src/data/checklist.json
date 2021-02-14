@@ -34,6 +34,11 @@
     "title": "Merge branch into master",
     "status": "none",
     "error": false
+  },
+  {
+    "title": "Completed",
+    "status": "none",
+    "error": false
   }
 ]
 }

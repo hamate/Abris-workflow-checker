@@ -1,39 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import checklist from '../../data/checklist.json';
 import Task from '../Task/Task';
 import './Checker.css';
 
 function Checker() {
   const [workflow, setWorkflow] = useState(checklist.tasks);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-
-  }, []);
 
   function handleCheckingStart() {
     let i = 0;
-    let randomInterval = 2;
     const setDone = () => {
-      localStorage.setItem('tasks', JSON.stringify(workflow));
       const alterTasks = [...workflow];
       let alterTask;
       for (let k = 0; k <= i; k++) {
         alterTask = { ...alterTasks[k], status: 'done' };
         alterTasks[k] = alterTask;
       }
-      setWorkflow(alterTasks);
+      if (i === workflow.length - 1) {
+        alterTask = { ...alterTasks[i], status: 'done' };
+        alterTasks[i] = alterTask;
+        setWorkflow(alterTasks);
+      } else {
+        alterTask = { ...alterTasks[i], status: 'running' };
+        alterTasks[i] = alterTask;
+        setWorkflow(alterTasks);
+      }
       i++;
       if (i === workflow.length) {
         clearInterval(interval);
       }
-      randomInterval = Math.random() * (5 - 1) + 1;
     };
-
-    const interval = setInterval(setDone, randomInterval);
+    const interval = setInterval(setDone, 1000);
   }
-
-  // console.log(workflow);
 
   return (
     <div className="checker-main-container">
@@ -48,7 +45,7 @@ function Checker() {
       </div>
       <div className="checker-container">
         {workflow.map((task) => (
-          <Task key={task.title} task={task} />
+          <Task key={task.title} task={task} status={task.status} />
         ))}
       </div>
     </div>
