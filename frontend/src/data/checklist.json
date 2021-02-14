@@ -1,0 +1,39 @@
+{
+  "tasks":[
+  {
+    "title": "Create new branch from Github repo",
+    "status": "none",
+    "error": false
+  },
+  {
+    "title": "Add files to the repo",
+    "status": "none",
+    "error": false
+  },
+  {
+    "title": "Commit changes to the repo",
+    "status": "none",
+    "error": false
+  },
+  {
+    "title": "Push files to the repo",
+    "status": "none",
+    "error": false
+  },
+  {
+    "title": "Create pull request on Github",
+    "status": "none",
+    "error": false
+  },
+  {
+    "title": "Resolve conflicts",
+    "status": "none",
+    "error": false
+  },
+  {
+    "title": "Merg branch into master",
+    "status": "none",
+    "error": false
+  }
+]
+}
